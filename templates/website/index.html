@@ -1,0 +1,296 @@
+{% extends "website/base.html" %}
+
+{% block content %}
+
+<header class="hero" role="banner" aria-label="Brandlumeo Digital Marketing Agency Kerala">
+    <!-- Cinematic background -->
+    <div class="hero-cinematic-bg" aria-hidden="true">
+        <div class="hero-orb orb-1"></div>
+        <div class="hero-orb orb-2"></div>
+        <div class="hero-orb orb-3"></div>
+        <div class="hero-orb orb-4"></div>
+    </div>
+
+    <div class="hero-content container">
+        <div class="hero-text">
+            <p class="eyebrow">
+                Premium Digital Marketing Agency in Kerala
+            </p>
+
+            <h1>
+                {% if hero and hero.title %}
+                    {{ hero.title }}
+                {% else %}
+                    Brandlumeo: Data-led Digital Marketing That Drives Leads & Sales
+                {% endif %}
+            </h1>
+
+            <p class="hero-subtitle">
+                {% if hero and hero.subtitle %}
+                    {{ hero.subtitle }}
+                {% else %}
+                    We help ambitious brands in Kerala grow faster with SEO, paid ads, content, and conversion-focused creative.
+                    Clear KPIs, transparent reporting, and execution that feels like an in-house team.
+                {% endif %}
+            </p>
+
+            <nav class="hero-actions" aria-label="Primary actions">
+                <a href="{% url 'contact' %}" class="btn">
+                    {% if hero and hero.button_text %}
+                        {{ hero.button_text }}
+                    {% else %}
+                        Book a Free Growth Call
+                    {% endif %}
+                </a>
+
+                <a href="{% url 'portfolio' %}" class="btn btn-secondary">
+                    View Case Studies
+                </a>
+            </nav>
+
+            <div class="hero-stats" aria-label="Company highlights">
+                <div>
+                    <h2 class="sr-only">Brandlumeo results</h2>
+                    <h3>120+</h3>
+                    <p>Brands supported</p>
+                </div>
+                <div>
+                    <h3>4.9/5</h3>
+                    <p>Client satisfaction</p>
+                </div>
+                <div>
+                    <h3>3.2x</h3>
+                    <p>Average ROI in 90 days</p>
+                </div>
+            </div>
+
+            <p class="sr-only">
+                Brandlumeo is a digital marketing agency in Kerala offering SEO, paid media, content marketing,
+                branding, conversion optimization, and reporting dashboards for business growth.
+            </p>
+        </div>
+
+        <aside class="hero-card" aria-label="Campaign snapshot example">
+            <div class="hero-card-top">
+                <h2>Campaign Snapshot</h2>
+                <span>Last 30 Days</span>
+            </div>
+
+            <div class="hero-metric">
+                <p>Qualified Leads</p>
+                <h3>1,284</h3>
+                <span class="metric-up">+38% month-over-month</span>
+            </div>
+
+            <div class="hero-metric">
+                <p>Ad Spend Efficiency</p>
+                <h3>4.6x ROAS</h3>
+                <span class="metric-up">+22% uplift</span>
+            </div>
+
+            <div class="hero-card-note">
+                We plan, deploy, and optimize growth across SEO, search ads, social ads, and content.
+            </div>
+        </aside>
+    </div>
+</header>
+
+
+<main id="main-content">
+
+<section class="logo-strip" aria-label="Clients and projects">
+    <div class="container">
+        <div class="team-strip-head">
+            <p>Trusted by growth-focused teams</p>
+            <div class="team-strip-progress" aria-hidden="true">
+                <span data-team-scroll-progress></span>
+            </div>
+        </div>
+
+        <div class="team-scroll-wrap" data-team-scroll-wrap>
+            <div class="team-scroll-track">
+                <article class="team-scroll-card">
+                    <h3>Otomation</h3>
+                    <p>E-invoice platform growth</p>
+                </article>
+                <article class="team-scroll-card">
+                    <h3>Skylightstudio</h3>
+                    <p>Premium light shop positioning</p>
+                </article>
+                <article class="team-scroll-card">
+                    <h3>Eyetrack Solution</h3>
+                    <p>CCTV solutions lead generation</p>
+                </article>
+                <article class="team-scroll-card">
+                    <h3>Petal Box</h3>
+                    <p>Craft business growth</p>
+                </article>
+                <article class="team-scroll-card">
+                    <h3>Bellwether Trading LLP</h3>
+                    <p>B2B commodities &amp; exports</p>
+                </article>
+                <article class="team-scroll-card">
+                    <h3>Nutrihive Healthcare and Marketing LLP</h3>
+                    <p>Healthcare &amp; nutrition marketing</p>
+                </article>
+                <article class="team-scroll-card">
+                    <h3>Royal Radiant Contracting LLC</h3>
+                    <p>Commercial &amp; residential contracting</p>
+                </article>
+                <article class="team-scroll-card">
+                    <h3>UrbanEdge</h3>
+                    <p>Regional brand expansion</p>
+                </article>
+                <article class="team-scroll-card">
+                    <h3>BrightFlow</h3>
+                    <p>Conversion-led campaign execution</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="social-connect-strip" aria-label="Social media links">
+    <div class="container social-connect-inner">
+        <p>Follow Brandlumeo for marketing insights, growth playbooks, and campaign updates.</p>
+        <div class="social-connect-links">
+            <a href="https://www.linkedin.com/company/111710517/admin/dashboard/"
+               class="social-link" target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">Brandlumeo on LinkedIn</span>
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zM4.943 13.5V6.169H2.542V13.5zM3.743 5.165c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.208 2.4 3.917c0 .694.521 1.248 1.327 1.248zm3.181 8.335h2.401V9.409c0-.219.016-.438.082-.594.178-.438.582-.891 1.261-.891.89 0 1.245.672 1.245 1.656V13.5h2.401V9.303c0-2.247-1.2-3.293-2.8-3.293-1.29 0-1.845.71-2.165 1.21h.016v-1.051H6.924c.03.678 0 7.331 0 7.331z"/></svg>
+                <span>LinkedIn</span>
+            </a>
+
+            <a href="https://www.instagram.com/brandlumeo_/"
+               class="social-link" target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">Brandlumeo on Instagram</span>
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.441c2.134 0 2.389.008 3.233.046.78.036 1.204.166 1.485.275.372.145.637.318.915.596.278.278.451.543.596.915.109.281.239.705.275 1.485.038.844.046 1.099.046 3.233s-.008 2.389-.046 3.233c-.036.78-.166 1.204-.275 1.485a4.06 4.06 0 0 1-.596.915 4.06 4.06 0 0 1-.915.596c-.281.109-.705.239-1.485.275-.844.038-1.099.046-3.233.046s-2.389-.008-3.233-.046c-.78-.036-1.204-.166-1.485-.275a4.06 4.06 0 0 1-.915-.596 4.06 4.06 0 0 1-.596-.915c-.109-.281-.239-.705-.275-1.485C1.45 10.38 1.442 10.125 1.442 7.99s.008-2.389.046-3.233c.036-.78.166-1.204.275-1.485.145-.372.318-.637.596-.915.278-.278.543-.451.915-.596.281-.109.705-.239 1.485-.275C5.611 1.449 5.866 1.441 8 1.441m0-1.441C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a5.5 5.5 0 0 0-1.98 1.29A5.5 5.5 0 0 0 .42 3.69c-.198.509-.332 1.09-.372 1.943C.01 6.486 0 6.759 0 8.93c0 2.17.01 2.444.048 3.297.04.852.174 1.433.372 1.942.22.57.52 1.06.99 1.53.47.47.96.77 1.53.99.509.198 1.09.332 1.943.372.853.039 1.126.048 3.297.048 2.17 0 2.444-.01 3.297-.048.852-.04 1.433-.174 1.942-.372a5.5 5.5 0 0 0 1.53-.99 5.5 5.5 0 0 0 .99-1.53c.198-.509.332-1.09.372-1.943.039-.853.048-1.126.048-3.297 0-2.17-.01-2.444-.048-3.297-.04-.852-.174-1.433-.372-1.942a5.5 5.5 0 0 0-.99-1.53 5.5 5.5 0 0 0-1.53-.99c-.509-.198-1.09-.332-1.943-.372C10.444.01 10.171 0 8 0m0 3.892A4.098 4.098 0 1 0 8 12.09 4.098 4.098 0 0 0 8 3.892m0 1.441a2.657 2.657 0 1 1 0 5.314 2.657 2.657 0 0 1 0-5.314m4.27-2.564a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92"/></svg>
+                <span>Instagram</span>
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=61586554286960"
+               class="social-link" target="_blank" rel="noopener noreferrer">
+                <span class="sr-only">Brandlumeo on Facebook</span>
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8.94 6.658V4.542c0-.546.363-.673.618-.673h1.578V1.313L8.966 1.304c-2.41 0-2.958 1.805-2.958 2.96v2.394H4v2.967h2.008V16h2.932V9.625h1.98l.294-2.967z"/></svg>
+                <span>Facebook</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<section class="services" aria-label="Digital marketing services in Kerala">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Full-Funnel Digital Marketing Services</h2>
+            <p>
+                Strategy + creative + performance execution — built to increase visibility, leads, and revenue.
+                Ideal for brands in Kerala and GCC markets.
+            </p>
+        </div>
+
+        <div class="service-container">
+            {% if services %}
+                {% for service in services %}
+                    <article class="service-card">
+                        <h3>{{ service.title }}</h3>
+                        <p>{{ service.description }}</p>
+                        <a class="sr-only" href="{% url 'contact' %}">Enquire about {{ service.title }}</a>
+                    </article>
+                {% endfor %}
+            {% else %}
+                <article class="service-card">
+                    <h3>Search Engine Optimization (SEO)</h3>
+                    <p>Technical audits, content clusters, and authority building to rank for high-intent keywords.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Paid Ads &amp; Growth Marketing</h3>
+                    <p>Performance campaigns across Google, Meta, and LinkedIn optimized for ROAS and CAC.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Brand Positioning</h3>
+                    <p>Messaging, visual identity, and landing page storytelling that improves conversion.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Content &amp; Social Media</h3>
+                    <p>Content systems that build trust, community engagement, and demand generation.</p>
+                </article>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+
+<section class="home-faq-section" aria-label="Frequently asked questions">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Frequently Asked Questions</h2>
+            <p>Quick answers to common questions from new clients.</p>
+        </div>
+
+        <div class="home-faq-grid">
+            <article class="home-faq-card">
+                <h3>How soon can we launch?</h3>
+                <p>Most projects begin within 7–14 days after discovery and access setup.</p>
+            </article>
+            <article class="home-faq-card">
+                <h3>Do you work with internal teams?</h3>
+                <p>Yes. We collaborate with in-house marketers, founders, and sales teams.</p>
+            </article>
+            <article class="home-faq-card">
+                <h3>What does reporting include?</h3>
+                <p>KPI movement, channel insights, test outcomes, and next-step action plans.</p>
+            </article>
+            <article class="home-faq-card">
+                <h3>Can you support multiple markets?</h3>
+                <p>Yes. We build region-specific campaigns for local, national, and international growth.</p>
+            </article>
+        </div>
+    </div>
+
+    <!-- FAQ Schema for Google Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How soon can we launch?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most projects begin within 7–14 days after discovery and access setup." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with internal teams?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We collaborate with in-house marketers, founders, and sales teams." }
+        },
+        {
+          "@type": "Question",
+          "name": "What does reporting include?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Reporting includes KPI movement, channel-level insights, experiment outcomes, and a clear next-step plan." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you support multiple markets?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We run region-specific campaigns for local, national, and international growth." }
+        }
+      ]
+    }
+    </script>
+</section>
+
+
+<section class="cta" aria-label="Start a project">
+    <div class="container cta-box">
+        <div>
+            <h2>Ready to scale your revenue?</h2>
+            <p>Schedule a strategy call to review your funnel and identify quick wins for growth.</p>
+        </div>
+        <a href="{% url 'contact' %}" class="btn">Get a Proposal</a>
+    </div>
+</section>
+
+</main>
+
+{% endblock %}

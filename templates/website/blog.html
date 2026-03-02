@@ -1,0 +1,169 @@
+{% extends "website/base.html" %}
+{% block content %}
+
+<section class="page-header blog-page-header">
+
+    <h1>Marketing Insights & Blog</h1>
+    <p>Tips, strategies and the latest trends in digital marketing.</p>
+</section>
+
+<section class="blog-featured">
+    <div class="container featured-grid">
+        <div class="featured-content">
+            <p class="eyebrow">Featured Insight</p>
+            <h2>How to build a full-funnel growth engine in 90 days.</h2>
+            <p>We break down the exact roadmap we use for new client onboarding, from research to optimization.</p>
+            <a href="{% url 'contact' %}" class="btn">Get the Playbook</a>
+        </div>
+        <div class="featured-card">
+            <h4>Inside This Guide</h4>
+            <ul>
+                <li>Funnel audit and channel prioritization</li>
+                <li>High-converting landing page framework</li>
+                <li>Performance reporting cadence</li>
+                <li>Scaling with experiments</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="blog-container">
+    <div class="blog-card">
+        <span class="tag">SEO</span>
+        <h3>Top SEO Strategies for 2026 Growth</h3>
+        <p>Learn how technical improvements and content clusters drive compounding traffic.</p>
+    </div>
+
+    <div class="blog-card">
+        <span class="tag">Paid Media</span>
+        <h3>How Paid Ads Scale Revenue</h3>
+        <p>Smart PPC frameworks to lower CAC and increase ROAS.</p>
+    </div>
+
+    <div class="blog-card">
+        <span class="tag">Branding</span>
+        <h3>Messaging That Converts</h3>
+        <p>Position your brand to stand out in crowded markets.</p>
+    </div>
+    <div class="blog-card">
+        <span class="tag">Analytics</span>
+        <h3>Reporting Dashboards That Execs Actually Use</h3>
+        <p>Create KPI views that keep teams accountable and aligned.</p>
+    </div>
+</section>
+
+<section class="blog-topics">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Explore by Topic</h2>
+            <p>Jump straight into the channels you want to master.</p>
+        </div>
+        <div class="topic-grid">
+            <div class="topic-card">SEO &amp; Content</div>
+            <div class="topic-card">Paid Media</div>
+            <div class="topic-card">Social Growth</div>
+            <div class="topic-card">Conversion Rate</div>
+            <div class="topic-card">Brand Strategy</div>
+            <div class="topic-card">Analytics</div>
+        </div>
+    </div>
+</section>
+
+<section class="editorial-series">
+    <div class="container">
+        <div class="section-heading">
+            <h2>Editorial Series</h2>
+            <p>Guided article tracks for operators, founders, and in-house marketing teams.</p>
+        </div>
+        <div class="series-grid">
+            <div class="series-card">
+                <h3>Growth Foundations</h3>
+                <p>Core planning frameworks for channel selection, KPI design, and campaign setup.</p>
+            </div>
+            <div class="series-card">
+                <h3>Acquisition Systems</h3>
+                <p>Advanced SEO, paid media, and demand generation methods for steady pipeline growth.</p>
+            </div>
+            <div class="series-card">
+                <h3>Conversion Excellence</h3>
+                <p>Landing page strategy, CRO testing structures, and offer positioning best practices.</p>
+            </div>
+            <div class="series-card">
+                <h3>Retention &amp; LTV</h3>
+                <p>Email lifecycle architecture, remarketing strategy, and post-purchase experience optimization.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="resource-vault">
+    <div class="container resource-grid">
+        <div class="resource-card">
+            <h3>Template Vault</h3>
+            <p>Campaign brief templates, reporting formats, and growth planning sheets used by our team.</p>
+            <a href="{% url 'contact' %}" class="btn btn-secondary">Request Templates</a>
+        </div>
+        <div class="resource-card">
+            <h3>Benchmark Library</h3>
+            <p>Channel-level benchmark ranges to help evaluate CAC, ROAS, CPL, and conversion performance.</p>
+            <a href="{% url 'contact' %}" class="btn btn-secondary">Get Benchmarks</a>
+        </div>
+        <div class="resource-card">
+            <h3>Playbook Archive</h3>
+            <p>Step-by-step campaign playbooks for product launches, lead generation, and demand acceleration.</p>
+            <a href="{% url 'contact' %}" class="btn btn-secondary">Access Playbooks</a>
+        </div>
+    </div>
+</section>
+
+<section class="expert-notes">
+
+    <div class="container expert-notes-grid">
+        <div>
+            <p class="eyebrow">Expert Notes</p>
+            <h2>Short insights from campaign operators.</h2>
+            <p>Practical lessons captured from active account management, testing cycles, and performance reviews.</p>
+        </div>
+        <div class="expert-note-card">
+            <h4>Media Buying Note</h4>
+            <p>Stable growth often comes from budget reallocation discipline, not only from increasing spend.</p>
+        </div>
+        <div class="expert-note-card">
+            <h4>SEO Note</h4>
+            <p>Topic authority compounds faster when technical hygiene and internal linking are planned together.</p>
+        </div>
+        <div class="expert-note-card">
+            <h4>CRO Note</h4>
+            <p>Offer clarity and friction removal usually outperform visual redesign-only experiments.</p>
+        </div>
+    </div>
+</section>
+
+<section class="insights-section">
+
+    <div class="container insights-grid">
+        <div class="insights-card">
+            <h3>Growth Playbook</h3>
+            <p>Get our quarterly performance benchmarks and channel recommendations.</p>
+            <a href="{% url 'contact' %}" class="btn btn-secondary">Request Access</a>
+        </div>
+        <div class="insights-card">
+            <h3>Agency Newsletter</h3>
+            <p>Short, practical insights sent twice a month. No fluff.</p>
+            <a href="{% url 'contact' %}" class="btn btn-secondary">Join the List</a>
+        </div>
+    </div>
+</section>
+
+<section class="blog-cta-section">
+
+    <div class="container blog-cta-box">
+        <div>
+            <h2>Want monthly insights tailored to your market?</h2>
+            <p>Get focused strategy updates, benchmark shifts, and actionable playbooks for your growth stage.</p>
+        </div>
+        <a href="{% url 'contact' %}" class="btn">Subscribe for Insights</a>
+    </div>
+</section>
+
+{% endblock %}

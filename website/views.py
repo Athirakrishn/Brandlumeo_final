@@ -1,7 +1,12 @@
 import urllib.parse
+
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Service, HeroSection, ContactMessage
+from django.core.mail import send_mail
+from django.conf import settings
+from django.http import Http404
+from .models import Service, HeroSection
+from .service_catalog import get_service_sections, get_service_map
 
 
 def home(request):
@@ -13,7 +18,22 @@ def home(request):
 
 
 def services_page(request):
-    return render(request, "website/services.html")
+    context = {
+        "service_sections": get_service_sections(),
+    }
+    return render(request, "website/services.html", context)
+
+
+def service_detail_page(request, slug):
+    service_map = get_service_map()
+    service = service_map.get(slug)
+    if not service:
+        raise Http404("Service not found")
+
+    context = {
+        "service": service,
+    }
+    return render(request, "website/service_detail.html", context)
 
 
 def about_page(request):
@@ -36,29 +56,28 @@ def contact_page(request):
         message = request.POST.get("message", "").strip()
 
         if name and email and message:
-            # We still save it to the DB for admin tracking 
-            ContactMessage.objects.create(
-                name=name,
-                email=email,
-                company=company,
-                message=message,
-            )
+            mail_subject = f"New Contact Form Submission from {name}"
             
-            # Construct the email body
             mail_body = f"Name: {name}\nEmail: {email}\n"
             if company:
                 mail_body += f"Company: {company}\n"
             mail_body += f"\nMessage:\n{message}"
 
-            # Create the mailto link
-            subject = urllib.parse.quote(f"New Contact Form Submission from {name}")
-            body = urllib.parse.quote(mail_body)
-            # The destination email handle where the info should be received
             target_email = "Info@brandlumeo.com"
-            mailto_url = f"mailto:{target_email}?subject={subject}&body={body}"
             
-            # Render thank you page and pass the mailto_url to be triggered by JS
-            return render(request, "website/thank_you.html", {"mailto_url": mailto_url})
+            try:
+                send_mail(
+                    subject=mail_subject,
+                    message=mail_body,
+                    from_email=settings.EMAIL_HOST_USER,  # Using the authenticated email
+                    recipient_list=[target_email],
+                    fail_silently=False,
+                )
+                return render(request, "website/thank_you.html")
+            except Exception as e:
+                # Log the error in a real app, here we'll just show a message to the user
+                messages.error(request, "There was an error sending your message. Please try again later.")
+                return render(request, "website/contact.html")
 
         messages.error(request, "Please fill out your name, email, and message.")
 

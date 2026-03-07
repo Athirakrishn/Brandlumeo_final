@@ -11,121 +11,27 @@
     <div class="container quick-nav-wrap">
         <p>Jump to</p>
         <div class="quick-nav-chips">
-            <a href="#branding-services">Branding</a>
-            <a href="#digital-marketing-services">Digital Marketing</a>
-            <a href="#content-creation-services">Content</a>
-            <a href="#website-development-services">Website</a>
-            <a href="#mobile-app-services">Mobile App</a>
-            <a href="#additional-it-services">Additional IT</a>
+            {% for section in service_sections %}
+            <a href="#{{ section.id }}">{{ section.quick_label }}</a>
+            {% endfor %}
         </div>
     </div>
 </section>
 
 <section class="services services-page">
     <div class="container">
-
-        <!-- BRANDING SERVICES -->
-        <div class="section-heading" id="branding-services">
-            <h2>Branding Services</h2>
+        {% for section in service_sections %}
+        <div class="section-heading" id="{{ section.id }}">
+            <h2>{{ section.name }}</h2>
         </div>
         <div class="service-container">
-            <div class="service-card"><h3>Logo Design</h3></div>
-            <div class="service-card"><h3>Brand Identity Development</h3></div>
-            <div class="service-card"><h3>Brand Strategy & Positioning</h3></div>
-            <div class="service-card"><h3>Brand Guidelines Creation</h3></div>
-            <div class="service-card"><h3>Rebranding Services</h3></div>
-            <div class="service-card"><h3>Corporate Branding</h3></div>
-            <div class="service-card"><h3>Packaging Design</h3></div>
-            <div class="service-card"><h3>Visual Identity Systems</h3></div>
+            {% for service in section.services %}
+            <a href="{% url 'service_detail' service.slug %}" class="service-card service-card-link" aria-label="{{ service.title }}">
+                <h3>{{ service.title }}</h3>
+            </a>
+            {% endfor %}
         </div>
-
-        <!-- DIGITAL MARKETING -->
-        <div class="section-heading" id="digital-marketing-services">
-            <h2>Digital Marketing Services</h2>
-        </div>
-        <div class="service-container">
-
-            <div class="service-card">
-                <h3>Search Engine Optimization (SEO)</h3>
-                <p>On-page, Off-page, Technical, Local & Ecommerce SEO plus audits.</p>
-            </div>
-
-            <div class="service-card">
-                <h3>PPC Advertising</h3>
-                <p>Google Ads, Meta Ads, LinkedIn Ads, YouTube & Display campaigns.</p>
-            </div>
-
-            <div class="service-card">
-                <h3>Social Media Marketing</h3>
-                <p>Strategy, content planning, community management & influencer marketing.</p>
-            </div>
-
-            <div class="service-card">
-                <h3>Performance Marketing</h3>
-                <p>Lead generation, funnel optimization, CRO, A/B testing & analytics.</p>
-            </div>
-
-        </div>
-
-        <!-- CONTENT CREATION -->
-        <div class="section-heading" id="content-creation-services">
-            <h2>Content Creation Services</h2>
-        </div>
-        <div class="service-container">
-            <div class="service-card"><h3>Social Media Post Design</h3></div>
-            <div class="service-card"><h3>Ad Creatives (Static & Video)</h3></div>
-            <div class="service-card"><h3>Video Editing & Reels</h3></div>
-            <div class="service-card"><h3>Promotional Videos</h3></div>
-            <div class="service-card"><h3>Website Content Writing</h3></div>
-            <div class="service-card"><h3>Blog & Article Writing</h3></div>
-            <div class="service-card"><h3>Product Descriptions</h3></div>
-            <div class="service-card"><h3>Script Writing & Copywriting</h3></div>
-        </div>
-
-        <!-- WEBSITE DEVELOPMENT -->
-        <div class="section-heading" id="website-development-services">
-            <h2>Website Development Services</h2>
-        </div>
-        <div class="service-container">
-            <div class="service-card"><h3>Custom Website Design</h3></div>
-            <div class="service-card"><h3>Responsive Website Development</h3></div>
-            <div class="service-card"><h3>Corporate Websites</h3></div>
-            <div class="service-card"><h3>Portfolio Websites</h3></div>
-            <div class="service-card"><h3>Landing Pages</h3></div>
-            <div class="service-card"><h3>E-commerce Development</h3></div>
-            <div class="service-card"><h3>CMS Development</h3></div>
-            <div class="service-card"><h3>Website Redesign</h3></div>
-            <div class="service-card"><h3>Website Maintenance & Support</h3></div>
-            <div class="service-card"><h3>Web Application Development</h3></div>
-        </div>
-
-        <!-- MOBILE APP DEVELOPMENT -->
-        <div class="section-heading" id="mobile-app-services">
-            <h2>Mobile App Development Services</h2>
-        </div>
-        <div class="service-container">
-            <div class="service-card"><h3>Android App Development</h3></div>
-            <div class="service-card"><h3>iOS App Development</h3></div>
-            <div class="service-card"><h3>Hybrid App Development</h3></div>
-            <div class="service-card"><h3>Cross Platform Development</h3></div>
-            <div class="service-card"><h3>UI/UX Design</h3></div>
-            <div class="service-card"><h3>App Testing</h3></div>
-            <div class="service-card"><h3>App Maintenance & Updates</h3></div>
-        </div>
-
-        <!-- ADDITIONAL SERVICES -->
-        <div class="section-heading" id="additional-it-services">
-            <h2>Additional IT & Creative Services</h2>
-        </div>
-        <div class="service-container">
-            <div class="service-card"><h3>Graphic Design</h3></div>
-            <div class="service-card"><h3>Logo Animation</h3></div>
-            <div class="service-card"><h3>Motion Graphics</h3></div>
-            <div class="service-card"><h3>Domain & Hosting Support</h3></div>
-            <div class="service-card"><h3>Website Security</h3></div>
-            <div class="service-card"><h3>API Integration</h3></div>
-            <div class="service-card"><h3>Cloud Solutions</h3></div>
-        </div>
+        {% endfor %}
 
     </div>
 </section>

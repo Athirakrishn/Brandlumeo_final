@@ -1,4 +1,5 @@
 import urllib.parse
+import logging
 
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -7,6 +8,8 @@ from django.conf import settings
 from django.http import Http404
 from .models import Service, HeroSection
 from .service_catalog import get_service_sections, get_service_map
+
+logger = logging.getLogger(__name__)
 
 
 def home(request):
@@ -63,20 +66,23 @@ def contact_page(request):
                 mail_body += f"Company: {company}\n"
             mail_body += f"\nMessage:\n{message}"
 
-            target_email = "Info@brandlumeo.com"
+            target_email = "info@brandlumeo.com"
             
             try:
                 send_mail(
                     subject=mail_subject,
                     message=mail_body,
-                    from_email=settings.EMAIL_HOST_USER,  # Using the authenticated email
+                    from_email=settings.DEFAULT_FROM_EMAIL,
                     recipient_list=[target_email],
                     fail_silently=False,
                 )
-                return render(request, "website/thank_you.html")
-            except Exception as e:
-                # Log the error in a real app, here we'll just show a message to the user
-                messages.error(request, "There was an error sending your message. Please try again later.")
+                return redirect("thank_you")
+            except Exception:
+                logger.exception("Contact form email send failed")
+                messages.error(
+                    request,
+                    "We could not send your message right now. Please try again in a few minutes.",
+                )
                 return render(request, "website/contact.html")
 
         messages.error(request, "Please fill out your name, email, and message.")

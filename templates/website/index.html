@@ -3,30 +3,154 @@
 
 {% block content %}
 
-<style>
-    main {
-        padding-top: 0 !important;
-    }
-</style>
+<section class="hl-hero" role="banner" aria-label="Brandlumeo Digital Marketing Agency Kerala">
 
-<section class="hero-scroll-container" role="banner" aria-label="Brandlumeo Digital Marketing Agency Kerala">
-    <div class="hero-sticky-wrap">
-        <!-- Canvas for the frames sequence -->
-        <canvas id="hero-canvas"></canvas>
+    <!-- Full-screen image background + Overlay + Animated aurora -->
+    <div class="hl-hero-bg" aria-hidden="true">
+        <img src="{% static 'images/homepage/hero-team.jpg' %}" 
+             alt="Brandlumeo team presenting campaign performance analytics" 
+             class="hl-hero-bg-img"
+             loading="eager">
+        <div class="hl-hero-overlay"></div>
         
-        <!-- Dark overlay to ensure text readability -->
-        <div class="hero-canvas-overlay"></div>
-        
-        <!-- Cinematic background -->
-        <div class="hero-cinematic-bg" aria-hidden="true">
-            <div class="hero-orb orb-1"></div>
-            <div class="hero-orb orb-2"></div>
-            <div class="hero-orb orb-3"></div>
-            <div class="hero-orb orb-4"></div>
+        <div class="hl-orb hl-orb-1"></div>
+        <div class="hl-orb hl-orb-2"></div>
+        <div class="hl-orb hl-orb-3"></div>
+        <div class="hl-grid-lines"></div>
+    </div>
+
+    <div class="container hl-hero-inner">
+
+        <!-- LEFT: headline + actions + stats -->
+        <div class="hl-hero-text">
+
+            <div class="hl-eyebrow" style="color: #86efac; font-family: 'Space Grotesk', sans-serif; letter-spacing: 2px; font-size: 12px; font-weight: 600; margin-bottom: 20px; text-transform: uppercase;">
+                Kerala &amp; UAE's Premier Growth Agency
+            </div>
+
+            <h1 class="hl-headline" style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: clamp(36px, 4vw, 60px); letter-spacing: -0.5px; line-height: 1.15; margin-bottom: 24px; color: #ffffff;">
+                We Make Brands <br>
+                in Digital Markets
+            </h1>
+
+            <p class="hl-subhead" style="font-family: 'Space Grotesk', sans-serif; font-size: clamp(16px, 1.2vw, 18px); font-weight: 400; color: rgba(255,255,255,0.85); max-width: 580px; margin-bottom: 40px; line-height: 1.6;">
+                Full-funnel digital marketing — SEO, Paid Ads, Social Media &amp; Brand Strategy — 
+                built for measurable revenue growth across Kerala and GCC markets.
+            </p>
+
+            <div class="hl-actions" style="gap: 20px;">
+                <a href="{% url 'contact' %}" class="hl-btn-primary" style="border-radius: 100px; padding: 16px 32px; background: #22c55e; color: #fff; text-decoration: none; font-weight: 600; font-family: sans-serif; display: inline-flex; align-items: center; gap: 8px; box-shadow: none;">
+                    Get a Free Strategy Call 
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="{% url 'portfolio' %}" class="hl-btn-ghost" style="border-radius: 100px; padding: 16px 32px; border: 1px solid rgba(255,255,255,0.3); background: transparent; color: #fff; font-weight: 600; font-family: sans-serif; text-decoration: none;">
+                    View Our Work
+                </a>
+            </div>
+
+            <!-- Stats strip -->
+            <div class="hl-hero-stats" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 16px 28px; margin-bottom: 20px;">
+                <div class="hl-stat">
+                    <span class="hl-stat-num" style="font-family: sans-serif; font-size: 24px; color: #86efac;">40+</span>
+                    <span class="hl-stat-label">Brands Scaled</span>
+                </div>
+                <div class="hl-stat-divider" style="background: rgba(255,255,255,0.15);"></div>
+                <div class="hl-stat">
+                    <span class="hl-stat-num" style="font-family: sans-serif; font-size: 24px; color: #86efac;">312%</span>
+                    <span class="hl-stat-label">Avg. ROAS</span>
+                </div>
+                <div class="hl-stat-divider" style="background: rgba(255,255,255,0.15);"></div>
+                <div class="hl-stat">
+                    <span class="hl-stat-num" style="font-family: sans-serif; font-size: 24px; color: #86efac;">98%</span>
+                    <span class="hl-stat-label">Retention</span>
+                </div>
+            </div>
+
+            <!-- Social proof strip -->
+            <div class="hl-social-proof">
+                <div class="hl-avatars">
+                    <span class="hl-avatar" style="background:#22c55e;">E</span>
+                    <span class="hl-avatar" style="background:#16a34a;">S</span>
+                    <span class="hl-avatar" style="background:#84cc16;">C</span>
+                    <span class="hl-avatar" style="background:#15803d;">P</span>
+                </div>
+                <div class="hl-proof-text" style="font-family: sans-serif; font-size: 13px;">
+                    <strong style="color: #86efac;">40+ brands</strong> trust Brandlumeo for growth
+                </div>
+            </div>
+
         </div>
 
+        <!-- RIGHT: Performance Snapshot Card -->
+        <div class="hl-hero-perf-card" style="background: rgba(30, 35, 32, 0.65); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; box-shadow: 0 40px 80px rgba(0,0,0,0.5);">
+            <div class="hl-perf-header" style="border-bottom: none;">
+                <h3 style="font-family: sans-serif; font-size: 14px; font-weight: 700;">Live Performance</h3>
+                <div class="hl-live-indicator">
+                    <span class="hl-live-pulse"></span> LIVE
+                </div>
+            </div>
+            
+            <div class="hl-perf-body">
+                <div class="hl-perf-item" style="justify-content: space-between;">
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <div class="hl-perf-icon" style="background: rgba(34, 197, 94, 0.1);">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                        </div>
+                        <div class="hl-perf-info">
+                            <span class="hl-perf-val" style="font-family: sans-serif; font-size: 18px;">+312%</span>
+                            <span class="hl-perf-label" style="font-family: sans-serif; font-size: 12px;">Avg. ROAS</span>
+                        </div>
+                    </div>
+                    <!-- Sparkline -->
+                    <svg width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 20L15 12L25 16L40 6L58 10" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <div class="hl-perf-item" style="justify-content: space-between;">
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <div class="hl-perf-icon" style="background: rgba(132, 204, 22, 0.1);">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="#84cc16" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <div class="hl-perf-info">
+                            <span class="hl-perf-val" style="font-family: sans-serif; font-size: 18px;">7 Days</span>
+                            <span class="hl-perf-label" style="font-family: sans-serif; font-size: 12px;">Campaigns Live</span>
+                        </div>
+                    </div>
+                    <!-- Pie Chart -->
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="12" stroke="#3b82f6" stroke-width="4"/>
+                        <path d="M16 4C22.6274 4 28 9.37258 28 16" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M28 16C28 22.6274 22.6274 28 16 28" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+
+                <div class="hl-perf-item" style="justify-content: space-between;">
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <div class="hl-perf-icon" style="background: rgba(34, 197, 94, 0.1);">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="#22c55e" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <div class="hl-perf-info">
+                            <span class="hl-perf-val" style="font-family: sans-serif; font-size: 18px;">Google Partner</span>
+                            <span class="hl-perf-label" style="font-family: sans-serif; font-size: 12px;">Certified Agency</span>
+                        </div>
+                    </div>
+                    <!-- Sparkline -->
+                    <svg width="60" height="24" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 18L18 8L30 14L45 4L58 12" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
 
     </div>
+
+    <!-- Scroll cue -->
+    <div class="hl-scroll-cue" aria-hidden="true">
+        <span class="hl-scroll-line"></span>
+        <span class="hl-scroll-text">Scroll</span>
+    </div>
+
 </section>
 
 
@@ -37,39 +161,51 @@
         <div class="team-strip-head">
             <p>Trusted by growth-focused teams</p>
         </div>
+    </div>
 
-        <div class="team-scroll-wrap" data-team-scroll-wrap>
-            <div class="team-scroll-track">
-                <div class="team-scroll-card">
-                    <img src="{% static 'images/homepage/logo-edufix.png' %}" alt="Edufix Learning">
-                </div>
-                <div class="team-scroll-card">
-                    <img src="{% static 'images/homepage/logo-sa-vision.png' %}" alt="SA's Vision">
-                </div>
-                <div class="team-scroll-card">
-                    <img src="{% static 'images/homepage/logo-codeboost.png' %}" alt="Codeboost">
-                </div>
-                <div class="team-scroll-card">
-                    <img src="{% static 'images/homepage/logo-hearts.png' %}" alt="Hearts Logo">
-                </div>
-                <div class="team-scroll-card">
-                    <img src="{% static 'images/homepage/logo-nutrihive.png' %}" alt="Nutrihive Trading and Marketing LLP">
-                </div>
-                <div class="team-scroll-card">
-                    <img src="{% static 'images/homepage/logo-edufix.png' %}" alt="Edufix Learning">
-                </div>
-                <div class="team-scroll-card">
-                    <img src="{% static 'images/homepage/logo-sa-vision.png' %}" alt="SA's Vision">
-                </div>
-                <div class="team-scroll-card">
-                    <img src="{% static 'images/homepage/logo-codeboost.png' %}" alt="Codeboost">
-                </div>
-                <div class="team-scroll-card">
-                    <img src="{% static 'images/homepage/logo-hearts.png' %}" alt="Hearts Logo">
-                </div>
-                <div class="team-scroll-card">
-                    <img src="{% static 'images/homepage/logo-nutrihive.png' %}" alt="Nutrihive Trading and Marketing LLP">
-                </div>
+    <div class="team-scroll-wrap" data-team-scroll-wrap>
+        <div class="team-scroll-track">
+            <div class="team-scroll-card">
+                <img src="{% static 'images/homepage/logo-edufix.png' %}" alt="Edufix Learning">
+            </div>
+            <div class="team-scroll-card">
+                <img src="{% static 'images/homepage/logo-sa-vision-hd.png' %}" alt="SA's Vision">
+            </div>
+            <div class="team-scroll-card">
+                <img src="{% static 'images/homepage/logo-codeboost.png' %}" alt="Codeboost">
+            </div>
+            <div class="team-scroll-card">
+                <img src="{% static 'images/homepage/logo-hearts.png' %}" alt="Hearts Logo">
+            </div>
+            <div class="team-scroll-card">
+                <img src="{% static 'images/homepage/logo-petalbox.png' %}" alt="Petalbox">
+            </div>
+            <div class="team-scroll-card">
+                <img src="{% static 'images/homepage/logo-otomation.png' %}" alt="Otomation">
+            </div>
+            <div class="team-scroll-card">
+                <img src="{% static 'images/homepage/logo-skylight.png' %}" alt="Skylight Studio">
+            </div>
+            <div class="team-scroll-card">
+                <img src="{% static 'images/homepage/logo-edufix.png' %}" alt="Edufix Learning">
+            </div>
+            <div class="team-scroll-card">
+                <img src="{% static 'images/homepage/logo-sa-vision-hd.png' %}" alt="SA's Vision">
+            </div>
+            <div class="team-scroll-card">
+                <img src="{% static 'images/homepage/logo-codeboost.png' %}" alt="Codeboost">
+            </div>
+            <div class="team-scroll-card">
+                <img src="{% static 'images/homepage/logo-hearts.png' %}" alt="Hearts Logo">
+            </div>
+            <div class="team-scroll-card">
+                <img src="{% static 'images/homepage/logo-petalbox.png' %}" alt="Petalbox">
+            </div>
+            <div class="team-scroll-card">
+                <img src="{% static 'images/homepage/logo-otomation.png' %}" alt="Otomation">
+            </div>
+            <div class="team-scroll-card">
+                <img src="{% static 'images/homepage/logo-skylight.png' %}" alt="Skylight Studio">
             </div>
         </div>
     </div>
@@ -220,69 +356,183 @@
     </div>
 </section>
 
-
-<section class="home-faq-section" aria-label="Frequently asked questions">
+<!-- LEADERSHIP SECTION -->
+<section class="leadership-section" aria-label="Our Leadership Team">
     <div class="container">
-        <div class="section-heading faq-heading">
-            <span class="pill-tag text-center">FAQ</span>
-            <h2>Frequently Asked Questions</h2>
-            <p>Quick answers to common questions from new clients.</p>
+        <div class="leadership-header">
+            <h2>Our Leadership<br>Team</h2>
         </div>
 
-        <div class="home-faq-grid">
-            <article class="home-faq-card">
-                <span class="faq-icon-wrap rocket-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 2s-1 12-5 16-9 2-9 2 0-3 2-9 16-9 16-9z"></path>
-                        <path d="M3 21l3-3"></path>
-                        <path d="M7.5 12.5L9 14"></path>
-                        <path d="M11.5 8.5L13 10"></path>
-                    </svg>
-                </span>
-                <h3>How soon can we launch?</h3>
-                <p>Most projects begin within 7–14 days after discovery and access setup.</p>
-                <div class="faq-hover-line"></div>
+        <div class="leadership-grid">
+            
+            <!-- Leader 1: Muhammad Afthab (CEO) -->
+            <article class="leader-card">
+                <div class="leader-image-wrap">
+                    <img src="{% static 'images/team/muhammad.jpg' %}" alt="Muhammad Afthab" class="leader-image">
+                </div>
+                <div class="leader-content">
+                    <h3 class="leader-name">MUHAMMAD<br>AFTHAB</h3>
+                    <p class="leader-title">CEO</p>
+                    <div class="leader-quote-icon">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="#3b82f6"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"></path></svg>
+                    </div>
+                    <p class="leader-bio">
+                        Muhammad Afthab is the Chief Executive Officer leading Brandlumeo with a vision for growth. He is known for fostering innovation and scalable strategies.
+                    </p>
+                </div>
             </article>
 
-            <article class="home-faq-card">
-                <span class="faq-icon-wrap user-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>
-                </span>
-                <h3>Do you work with internal teams?</h3>
-                <p>Yes. We collaborate with in-house marketers, founders, and sales teams.</p>
-                <div class="faq-hover-line"></div>
+            <!-- Leader 2: Midhun Asok (COO) -->
+            <article class="leader-card">
+                <div class="leader-image-wrap">
+                    <img src="{% static 'images/team/jithin.jpg' %}" alt="Midhun Asok" class="leader-image">
+                </div>
+                <div class="leader-content">
+                    <h3 class="leader-name">MIDHUN<br>ASOK</h3>
+                    <p class="leader-title">COO</p>
+                    <div class="leader-quote-icon">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="#e11d48"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"></path></svg>
+                    </div>
+                    <p class="leader-bio">
+                        Midhun Asok is the Chief Operating Officer dedicated to promoting sustainable execution, ensuring all campaigns meet our high standards.
+                    </p>
+                </div>
             </article>
 
-            <article class="home-faq-card">
-                <span class="faq-icon-wrap chart-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="20" x2="18" y2="10"></line>
-                        <line x1="12" y1="20" x2="12" y2="4"></line>
-                        <line x1="6" y1="20" x2="6" y2="14"></line>
-                    </svg>
-                </span>
-                <h3>What does reporting include?</h3>
-                <p>KPI movement, channel insights, test outcomes, and next-step action plans.</p>
-                <div class="faq-hover-line"></div>
+            <!-- Leader 3: Shanavas (CFO) -->
+            <article class="leader-card">
+                <div class="leader-image-wrap">
+                    <img src="{% static 'images/team/shanavas.jpg' %}" alt="Shanavas" class="leader-image">
+                </div>
+                <div class="leader-content">
+                    <h3 class="leader-name">SHANAVAS</h3>
+                    <p class="leader-title">CFO</p>
+                    <div class="leader-quote-icon">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="#8b5cf6"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"></path></svg>
+                    </div>
+                    <p class="leader-bio">
+                        Shanavas is the Chief Financial Officer ensuring the fiscal health and strategic investments of Brandlumeo, enabling our continuous market expansion.
+                    </p>
+                </div>
             </article>
 
-            <article class="home-faq-card">
-                <span class="faq-icon-wrap globe-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    </svg>
-                </span>
-                <h3>Can you support multiple markets?</h3>
-                <p>Yes. We build region-specific campaigns for local, national, and international growth.</p>
-                <div class="faq-hover-line"></div>
+            <!-- Leader 4: Jithin (CMO) -->
+            <article class="leader-card">
+                <div class="leader-image-wrap">
+                    <img src="{% static 'images/homepage/services-team.png' %}" alt="Jithin" class="leader-image">
+                </div>
+                <div class="leader-content">
+                    <h3 class="leader-name">JITHIN</h3>
+                    <p class="leader-title">CMO</p>
+                    <div class="leader-quote-icon">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="#f97316"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"></path></svg>
+                    </div>
+                    <p class="leader-bio">
+                        Jithin is the Chief Marketing Officer leading our creative and strategic marketing initiatives to ensure brand growth and visibility.
+                    </p>
+                </div>
             </article>
+
+            <!-- Leader 5: Sharafudeen (GM) -->
+            <article class="leader-card">
+                <div class="leader-image-wrap">
+                    <img src="{% static 'images/homepage/services-team.png' %}" alt="Sharafudeen" class="leader-image">
+                </div>
+                <div class="leader-content">
+                    <h3 class="leader-name">SHARAFUDEEN</h3>
+                    <p class="leader-title">General Manager</p>
+                    <div class="leader-quote-icon">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="#eab308"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"></path></svg>
+                    </div>
+                    <p class="leader-bio">
+                        Sharafudeen is the General Manager driving operational excellence. Known for streamlining processes and delivering strategic growth solutions.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<section class="home-faq-section" aria-label="Frequently asked questions">
+    <div class="container home-faq-container">
+        <div class="home-faq-left">
+            <span class="pill-tag">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+            <p>Quick answers to common questions from new clients. Can't find what you are looking for?</p>
+            <a href="{% url 'contact' %}" class="btn-consultation">
+                Ask a Question
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+
+        <div class="home-faq-accordion">
+            <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false">
+                    <span>How soon can we launch?</span>
+                    <span class="faq-icon-wrap">
+                        <svg class="chevron-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-content-inner">
+                        <p>Most projects begin within 7–14 days after discovery and access setup.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false">
+                    <span>Do you work with internal teams?</span>
+                    <span class="faq-icon-wrap">
+                        <svg class="chevron-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-content-inner">
+                        <p>Yes. We collaborate with in-house marketers, founders, and sales teams.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false">
+                    <span>What does reporting include?</span>
+                    <span class="faq-icon-wrap">
+                        <svg class="chevron-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-content-inner">
+                        <p>KPI movement, channel insights, test outcomes, and next-step action plans.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-trigger" aria-expanded="false">
+                    <span>Can you support multiple markets?</span>
+                    <span class="faq-icon-wrap">
+                        <svg class="chevron-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-content-inner">
+                        <p>Yes. We build region-specific campaigns for local, national, and international growth.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -338,7 +588,87 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    const canvas = document.getElementById("hero-canvas");
+
+    // ── Typed text animation ──────────────────────────────────────────
+    var words = ["Dominant", "Visible", "Unforgettable", "Unstoppable"];
+    var typedEl = document.getElementById("hl-typed");
+    if (typedEl) {
+        var wordIndex = 0;
+        var charIndex = 0;
+        var deleting = false;
+        var pauseMs = 1600;
+        var typeMs = 80;
+        var deleteMs = 45;
+
+        function typeLoop() {
+            var word = words[wordIndex];
+            if (!deleting) {
+                typedEl.textContent = word.slice(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === word.length) {
+                    deleting = true;
+                    setTimeout(typeLoop, pauseMs);
+                    return;
+                }
+                setTimeout(typeLoop, typeMs);
+            } else {
+                typedEl.textContent = word.slice(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) {
+                    deleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(typeLoop, 300);
+                    return;
+                }
+                setTimeout(typeLoop, deleteMs);
+            }
+        }
+        setTimeout(typeLoop, 600);
+    }
+
+    // ── Count-up animation for metric values ──────────────────────────
+    var metricEls = document.querySelectorAll(".hl-metric-val");
+    if (metricEls.length && "IntersectionObserver" in window) {
+        var countObserver = new IntersectionObserver(function (entries, obs) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                obs.unobserve(entry.target);
+                var el = entry.target;
+                var target = parseFloat(el.getAttribute("data-target") || "0");
+                var isDecimal = target % 1 !== 0;
+                var duration = 1600;
+                var start = performance.now();
+                function step(now) {
+                    var progress = Math.min((now - start) / duration, 1);
+                    var eased = 1 - Math.pow(1 - progress, 3);
+                    var value = target * eased;
+                    el.textContent = isDecimal ? value.toFixed(1) : Math.round(value);
+                    if (progress < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+            });
+        }, { threshold: 0.3 });
+        metricEls.forEach(function (el) { countObserver.observe(el); });
+    }
+
+    // ── FAQ Accordion ────────────────────────────────────────────────
+    var faqTriggers = document.querySelectorAll(".faq-trigger");
+    faqTriggers.forEach(function (trigger) {
+        trigger.addEventListener("click", function () {
+            var item = this.parentElement;
+            var isOpen = item.classList.contains("is-open");
+            document.querySelectorAll(".faq-item").forEach(function (el) {
+                el.classList.remove("is-open");
+                el.querySelector(".faq-trigger").setAttribute("aria-expanded", "false");
+            });
+            if (!isOpen) {
+                item.classList.add("is-open");
+                this.setAttribute("aria-expanded", "true");
+            }
+        });
+    });
+
+});
     const context = canvas.getContext("2d");
     const heroContent = document.getElementById("hero-content");
     const scrollContainer = document.querySelector(".hero-scroll-container");
@@ -454,6 +784,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("scroll", updateScrollProgress, { passive: true });
     window.addEventListener("resize", resizeCanvas);
+
+    // FAQ Accordion Handler
+    const faqTriggers = document.querySelectorAll(".faq-trigger");
+    faqTriggers.forEach(trigger => {
+        trigger.addEventListener("click", function () {
+            const item = this.parentElement;
+            const isOpen = item.classList.contains("is-open");
+            
+            // Close all items first
+            document.querySelectorAll(".faq-item").forEach(el => {
+                el.classList.remove("is-open");
+                el.querySelector(".faq-trigger").setAttribute("aria-expanded", "false");
+            });
+            
+            // If it wasn't open, open it
+            if (!isOpen) {
+                item.classList.add("is-open");
+                this.setAttribute("aria-expanded", "true");
+            }
+        });
+    });
 
     resizeCanvas();
     tick();

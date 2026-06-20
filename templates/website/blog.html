@@ -1,169 +1,173 @@
 {% extends "website/base.html" %}
+{% load static %}
 {% block content %}
 
-<section class="page-header blog-page-header">
-
-    <h1>Marketing Insights & Blog</h1>
-    <p>Tips, strategies and the latest trends in digital marketing.</p>
-</section>
-
-<section class="blog-featured">
-    <div class="container featured-grid">
-        <div class="featured-content">
-            <p class="eyebrow">Featured Insight</p>
-            <h2>How to build a full-funnel growth engine in 90 days.</h2>
-            <p>We break down the exact roadmap we use for new client onboarding, from research to optimization.</p>
-            <a href="{% url 'contact' %}" class="btn">Get the Playbook</a>
-        </div>
-        <div class="featured-card">
-            <h4>Inside This Guide</h4>
-            <ul>
-                <li>Funnel audit and channel prioritization</li>
-                <li>High-converting landing page framework</li>
-                <li>Performance reporting cadence</li>
-                <li>Scaling with experiments</li>
-            </ul>
-        </div>
+<!-- ===== BLOG HERO — Featured Insight ===== -->
+<section class="blog-hero">
+    <div class="blog-hero-image">
+        <img src="{% static 'images/blog/blog-hero.jpg' %}" alt="Full-Funnel Growth Strategy">
+        <div class="blog-hero-overlay"></div>
+    </div>
+    <div class="blog-hero-content">
+        <p class="blog-hero-eyebrow">Featured Insight</p>
+        <h1>The Future of Full-Funnel Growth</h1>
+        <p class="blog-hero-subtitle">Navigating the shift from transactional acquisition to lifecycle mastery in an AI-driven market.</p>
+        <a href="{% url 'contact' %}" class="btn-outline-blog">Read Article →</a>
     </div>
 </section>
 
-<section class="blog-container">
-    <div class="blog-card">
-        <span class="tag">SEO</span>
-        <h3>Top SEO Strategies for 2026 Growth</h3>
-        <p>Learn how technical improvements and content clusters drive compounding traffic.</p>
-    </div>
-
-    <div class="blog-card">
-        <span class="tag">Paid Media</span>
-        <h3>How Paid Ads Scale Revenue</h3>
-        <p>Smart PPC frameworks to lower CAC and increase ROAS.</p>
-    </div>
-
-    <div class="blog-card">
-        <span class="tag">Branding</span>
-        <h3>Messaging That Converts</h3>
-        <p>Position your brand to stand out in crowded markets.</p>
-    </div>
-    <div class="blog-card">
-        <span class="tag">Analytics</span>
-        <h3>Reporting Dashboards That Execs Actually Use</h3>
-        <p>Create KPI views that keep teams accountable and aligned.</p>
-    </div>
-</section>
-
-<section class="blog-topics">
+<!-- ===== BLOG FILTER TABS ===== -->
+<section class="blog-filters-section">
     <div class="container">
-        <div class="section-heading">
-            <h2>Explore by Topic</h2>
-            <p>Jump straight into the channels you want to master.</p>
-        </div>
-        <div class="topic-grid">
-            <div class="topic-card">SEO &amp; Content</div>
-            <div class="topic-card">Paid Media</div>
-            <div class="topic-card">Social Growth</div>
-            <div class="topic-card">Conversion Rate</div>
-            <div class="topic-card">Brand Strategy</div>
-            <div class="topic-card">Analytics</div>
+        <p class="blog-filters-label">Filter by Topic</p>
+        <div class="blog-filter-tabs" role="tablist">
+            <button class="blog-filter-tab active" data-blog-filter="all" role="tab" aria-pressed="true">All Insights</button>
+            <button class="blog-filter-tab" data-blog-filter="seo" role="tab" aria-pressed="false">SEO</button>
+            <button class="blog-filter-tab" data-blog-filter="paid" role="tab" aria-pressed="false">Paid Media</button>
+            <button class="blog-filter-tab" data-blog-filter="branding" role="tab" aria-pressed="false">Branding</button>
+            <button class="blog-filter-tab" data-blog-filter="webdev" role="tab" aria-pressed="false">Web & App</button>
         </div>
     </div>
 </section>
 
-<section class="editorial-series">
+<!-- ===== BLOG CARDS GRID ===== -->
+<section class="blog-posts-section">
     <div class="container">
-        <div class="section-heading">
-            <h2>Editorial Series</h2>
-            <p>Guided article tracks for operators, founders, and in-house marketing teams.</p>
+        <div class="blog-posts-grid">
+
+            <article class="blog-post-card" data-blog-category="seo">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/blog/blog-seo.jpg' %}" alt="SEO Strategies">
+                </div>
+                <div class="blog-post-body">
+                    <h3>Top SEO Strategies for 2024</h3>
+                    <p>Modern search is no longer just about keywords. Discover why topical authority built by an...</p>
+                    <a href="{% url 'contact' %}" class="blog-read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-post-card" data-blog-category="paid">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/blog/blog-paid.jpg' %}" alt="Paid Ads Strategy">
+                </div>
+                <div class="blog-post-body">
+                    <h3>How Paid Ads Scale Revenue</h3>
+                    <p>Efficiency vs. Volume: A deep-dive into the algorithmic shifts of Meta and Google Ads and...</p>
+                    <a href="{% url 'contact' %}" class="blog-read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-post-card" data-blog-category="branding">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/services/branding-identity.jpg' %}" alt="Brand Identity development">
+                </div>
+                <div class="blog-post-body">
+                    <h3>Crafting a Memorable Brand Identity in the AI Era</h3>
+                    <p>In an era of rapid AI content generation, authentic brand identity and story stand out more than ever. Here is how to build a visual system...</p>
+                    <a href="{% url 'contact' %}" class="blog-read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-post-card" data-blog-category="webdev">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/services/website.jpg' %}" alt="Responsive Website Development">
+                </div>
+                <div class="blog-post-body">
+                    <h3>Why Site Speed is the Ultimate Conversion Driver</h3>
+                    <p>Every millisecond of latency costs revenue. Learn how modern responsive frameworks and clean code structure directly impact user behavior...</p>
+                    <a href="{% url 'contact' %}" class="blog-read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-post-card" data-blog-category="seo">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/services/subsections/search-engine-optimization-seo.jpg' %}" alt="Local SEO strategies">
+                </div>
+                <div class="blog-post-body">
+                    <h3>The Evolution of Local Search and Map Pack SEO</h3>
+                    <p>With changing user behaviors and updated maps algorithms, optimization for local visibility has evolved. Discover the new rules for local dominance...</p>
+                    <a href="{% url 'contact' %}" class="blog-read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-post-card" data-blog-category="paid">
+                <div class="blog-post-image">
+                    <img src="{% static 'images/services/subsections/ppc-advertising.jpg' %}" alt="Meta ads vs google ads">
+                </div>
+                <div class="blog-post-body">
+                    <h3>Meta Ads vs. Google Ads: Where to Spend First?</h3>
+                    <p>A comparative breakdown of search intent vs. social interruption marketing, helping you allocate budget for maximum early ROI and customer acquisition...</p>
+                    <a href="{% url 'contact' %}" class="blog-read-more">Read More →</a>
+                </div>
+            </article>
+
         </div>
-        <div class="series-grid">
-            <div class="series-card">
-                <h3>Growth Foundations</h3>
-                <p>Core planning frameworks for channel selection, KPI design, and campaign setup.</p>
+    </div>
+</section>
+
+<!-- ===== BLOG QUOTE ===== -->
+<section class="blog-quote-section">
+    <div class="container">
+        <div class="blog-quote-card">
+            <div class="blog-quote-marks">"</div>
+            <blockquote class="blog-quote-text">
+                "The most dangerous phrase in business is 'we've always done it this way.'"
+            </blockquote>
+            <div class="blog-quote-attribution">
+                <span class="blog-quote-author">Grace Hopper</span>
+                <div class="blog-quote-nav">
+                    <button class="blog-quote-arrow" aria-label="Previous quote">‹</button>
+                    <button class="blog-quote-arrow" aria-label="Next quote">›</button>
+                </div>
             </div>
-            <div class="series-card">
-                <h3>Acquisition Systems</h3>
-                <p>Advanced SEO, paid media, and demand generation methods for steady pipeline growth.</p>
-            </div>
-            <div class="series-card">
-                <h3>Conversion Excellence</h3>
-                <p>Landing page strategy, CRO testing structures, and offer positioning best practices.</p>
-            </div>
-            <div class="series-card">
-                <h3>Retention &amp; LTV</h3>
-                <p>Email lifecycle architecture, remarketing strategy, and post-purchase experience optimization.</p>
-            </div>
         </div>
     </div>
 </section>
 
-<section class="resource-vault">
-    <div class="container resource-grid">
-        <div class="resource-card">
-            <h3>Template Vault</h3>
-            <p>Campaign brief templates, reporting formats, and growth planning sheets used by our team.</p>
-            <a href="{% url 'contact' %}" class="btn btn-secondary">Request Templates</a>
-        </div>
-        <div class="resource-card">
-            <h3>Benchmark Library</h3>
-            <p>Channel-level benchmark ranges to help evaluate CAC, ROAS, CPL, and conversion performance.</p>
-            <a href="{% url 'contact' %}" class="btn btn-secondary">Get Benchmarks</a>
-        </div>
-        <div class="resource-card">
-            <h3>Playbook Archive</h3>
-            <p>Step-by-step campaign playbooks for product launches, lead generation, and demand acceleration.</p>
-            <a href="{% url 'contact' %}" class="btn btn-secondary">Access Playbooks</a>
+<!-- ===== NEWSLETTER CTA ===== -->
+<section class="blog-newsletter-section">
+    <div class="container">
+        <div class="blog-newsletter-box">
+            <p class="blog-newsletter-eyebrow">Stay Ahead</p>
+            <h2 class="blog-newsletter-title">Want monthly insights?</h2>
+            <p class="blog-newsletter-subtitle">Receive executive summaries of the most impactful trends in digital marketing growth directly to your inbox.</p>
+            <form class="blog-newsletter-form" action="{% url 'contact' %}" method="get">
+                <input type="email" class="blog-newsletter-input" placeholder="Email Address" required>
+                <button type="submit" class="blog-newsletter-btn">Subscribe Now</button>
+            </form>
         </div>
     </div>
 </section>
 
-<section class="expert-notes">
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Blog filter tabs
+    var filterTabs = Array.from(document.querySelectorAll("[data-blog-filter]"));
+    var blogCards = Array.from(document.querySelectorAll("[data-blog-category]"));
 
-    <div class="container expert-notes-grid">
-        <div>
-            <p class="eyebrow">Expert Notes</p>
-            <h2>Short insights from campaign operators.</h2>
-            <p>Practical lessons captured from active account management, testing cycles, and performance reviews.</p>
-        </div>
-        <div class="expert-note-card">
-            <h4>Media Buying Note</h4>
-            <p>Stable growth often comes from budget reallocation discipline, not only from increasing spend.</p>
-        </div>
-        <div class="expert-note-card">
-            <h4>SEO Note</h4>
-            <p>Topic authority compounds faster when technical hygiene and internal linking are planned together.</p>
-        </div>
-        <div class="expert-note-card">
-            <h4>CRO Note</h4>
-            <p>Offer clarity and friction removal usually outperform visual redesign-only experiments.</p>
-        </div>
-    </div>
-</section>
+    if (filterTabs.length && blogCards.length) {
+        filterTabs.forEach(function (tab) {
+            tab.addEventListener("click", function () {
+                var filterValue = tab.getAttribute("data-blog-filter");
 
-<section class="insights-section">
+                filterTabs.forEach(function (t) {
+                    var isActive = t === tab;
+                    t.classList.toggle("active", isActive);
+                    t.setAttribute("aria-pressed", String(isActive));
+                });
 
-    <div class="container insights-grid">
-        <div class="insights-card">
-            <h3>Growth Playbook</h3>
-            <p>Get our quarterly performance benchmarks and channel recommendations.</p>
-            <a href="{% url 'contact' %}" class="btn btn-secondary">Request Access</a>
-        </div>
-        <div class="insights-card">
-            <h3>Agency Newsletter</h3>
-            <p>Short, practical insights sent twice a month. No fluff.</p>
-            <a href="{% url 'contact' %}" class="btn btn-secondary">Join the List</a>
-        </div>
-    </div>
-</section>
-
-<section class="blog-cta-section">
-
-    <div class="container blog-cta-box">
-        <div>
-            <h2>Want monthly insights tailored to your market?</h2>
-            <p>Get focused strategy updates, benchmark shifts, and actionable playbooks for your growth stage.</p>
-        </div>
-        <a href="{% url 'contact' %}" class="btn">Subscribe for Insights</a>
-    </div>
-</section>
+                blogCards.forEach(function (card) {
+                    if (filterValue === "all") {
+                        card.style.display = "";
+                    } else {
+                        var categories = (card.getAttribute("data-blog-category") || "").split(" ");
+                        card.style.display = categories.includes(filterValue) ? "" : "none";
+                    }
+                });
+            });
+        });
+    }
+});
+</script>
 
 {% endblock %}

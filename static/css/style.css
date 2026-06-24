@@ -28,7 +28,7 @@ html {
 
 body {
     font-family: "Space Grotesk", "Segoe UI", sans-serif;
-    background: var(--bg-light);
+    background: #060606;
     color: var(--text-dark);
 }
 
@@ -250,26 +250,32 @@ main {
 /* ===== NAVBAR ===== */
 
 .navbar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 12px 60px;
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 1300px;
+    padding: 12px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 100px;
     z-index: 999;
-    transition: background-color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease, padding 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: background-color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease, padding 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-radius 0.3s ease, transform 0.3s ease;
 }
 
 .navbar.is-scrolled {
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
 }
 
 @media (min-width: 769px) {
@@ -826,7 +832,7 @@ main {
 
 .logo-strip {
     padding: 30px 0 50px;
-    background: #f0f4ff;
+    background: #ffffff;
 }
 
 .team-strip-head {
@@ -920,8 +926,8 @@ main {
     width: auto;
     max-width: 92%;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.6;
+    filter: none;
+    opacity: 1;
     transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -4446,11 +4452,19 @@ body.cookie-consent-visible .h-scroll-portfolio-section {
     .navbar {
         position: sticky;
         top: 0;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
         padding: 14px 16px;
         flex-wrap: wrap;
         gap: 12px;
-        background-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: none;
         border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 0;
+        box-shadow: none;
     }
 
     .navbar .logo {
@@ -5106,7 +5120,9 @@ body.cookie-consent-visible .h-scroll-portfolio-section {
 .hl-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0.1) 100%);
+    background: 
+        linear-gradient(to right, #060606 0%, rgba(6, 6, 6, 0.3) 45%, #060606 100%),
+        linear-gradient(to bottom, transparent 50%, #060606 100%);
     z-index: 1;
 }
 
@@ -6132,4 +6148,55 @@ body.cookie-consent-visible .h-scroll-portfolio-section {
     .blog-newsletter-box { padding: 48px 24px; }
     .blog-newsletter-form { flex-direction: column; }
     .blog-newsletter-btn { width: 100%; }
+}
+
+/* ===============================
+   HOME PAGE RESPONSIVENESS OVERRIDES
+   =============================== */
+
+@media (max-width: 1024px) {
+    .hl-hero-inner {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding-top: 40px;
+    }
+    .hl-hero-text {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .hl-actions {
+        justify-content: center;
+    }
+    .hl-social-proof {
+        justify-content: center;
+    }
+    .hl-hero-perf-card {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hl-hero-stats {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 30px;
+    }
+    .hl-stat-divider {
+        width: 100%;
+        height: 1px;
+    }
+    .hl-actions {
+        flex-direction: column;
+    }
+    .hl-actions .hl-btn-primary, .hl-actions .hl-btn-ghost {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+    }
 }

@@ -16,7 +16,7 @@
     <link rel="canonical" href="{% block canonical %}{{ request.build_absolute_uri }}{% endblock %}">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2.2">
 
     <!-- Open Graph (Facebook/WhatsApp/LinkedIn) -->
     <meta property="og:type" content="website">
@@ -62,10 +62,119 @@
     {% endblock %}
 
     <style>
-        /* Globally decrease navbar width to match the home page style */
+        /* Globally decrease navbar width to match the home page style on larger screens */
         .navbar {
             max-width: 1000px !important;
-            width: 85% !important;
+            width: 100% !important; /* Full width on mobile */
+        }
+        @media (min-width: 768px) {
+            .navbar {
+                width: 85% !important; /* Decreased width on desktop */
+            }
+        }
+
+        /* Mobile specific fixes for footer and navbar */
+        @media (max-width: 768px) {
+            .navbar {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                border-radius: 0 !important;
+                margin: 0 !important;
+                padding: 10px 16px !important; /* Ensure navbar has padding on mobile */
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                flex-wrap: nowrap !important;
+                background-color: rgba(255, 255, 255, 0.95) !important;
+                backdrop-filter: blur(12px) !important;
+                -webkit-backdrop-filter: blur(12px) !important;
+                border: none !important;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+                z-index: 1000 !important;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+                gap: 32px !important;
+                margin-bottom: 40px !important;
+            }
+            .footer-meta {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+                padding-bottom: 30px !important;
+            }
+            .footer-meta-item {
+                text-align: center !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 8px !important;
+            }
+            .footer-meta-item h5 {
+                margin-bottom: 0 !important;
+            }
+            .footer-social {
+                justify-content: center !important;
+            }
+            .footer-bottom-inner {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 16px !important;
+            }
+            .footer-legal {
+                justify-content: center !important;
+                flex-wrap: wrap !important;
+                gap: 16px !important;
+            }
+            .site-footer {
+                padding: 40px 0 0 !important;
+                text-align: center !important;
+            }
+            .site-footer .logo {
+                justify-content: center !important;
+            }
+            .site-footer ul {
+                padding: 0 !important;
+                list-style: none !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 8px !important;
+            }
+        }
+        
+        /* Global Responsiveness Catch-All */
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+        }
+        
+        img, svg, video, canvas, iframe {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Generic catch-all for missing mobile grid stacking on small screens */
+        @media (max-width: 768px) {
+            .grid:not(.grid-cols-2):not(.grid-cols-3):not(.grid-cols-4):not([class*="grid-cols"]) {
+                grid-template-columns: 1fr !important;
+            }
+            .flex-row {
+                flex-direction: column !important;
+            }
+            /* Add horizontal padding to prevent text touching edges */
+            section, main {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+                box-sizing: border-box;
+            }
         }
     </style>
 </head>

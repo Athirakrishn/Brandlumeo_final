@@ -66,7 +66,8 @@
     border-radius: 2px;
 }
 .cn-hero__content h1 {
-    font-family: "Playfair Display", serif;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
     font-size: clamp(38px, 5.5vw, 68px);
     color: #fff;
     line-height: 1.1;
@@ -107,7 +108,9 @@
     margin-bottom: 40px;
 }
 .cn-info__header h2 {
-    font-family: "Playfair Display", serif;
+    font-family: "Space Grotesk", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
     font-size: clamp(30px, 3vw, 40px);
     color: #0d1f14;
     line-height: 1.2;
@@ -115,7 +118,7 @@
     letter-spacing: -0.3px;
 }
 .cn-info__header p {
-    color: #64748b;
+    color: #000000;
     font-size: 17px;
     line-height: 1.7;
 }
@@ -136,7 +139,7 @@
 .cn-info-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 16px 40px rgba(15,23,42,0.06);
-    border-color: #c7e8d2;
+    border-color: #000000;
 }
 .cn-info-card__icon {
     width: 36px;
@@ -156,7 +159,7 @@
 }
 .cn-info-card p {
     font-size: 15px;
-    color: #64748b;
+    color: #000000;
     line-height: 1.5;
 }
 .cn-info-card a {
@@ -193,7 +196,7 @@
     background: #f1f5f9;
     display: grid;
     place-items: center;
-    color: #475569;
+    color: #000000;
     transition: background 0.3s, color 0.3s, transform 0.3s;
 }
 .cn-social-link svg {
@@ -216,14 +219,16 @@
     border: 1px solid #edf0f2;
 }
 .cn-form-box h2 {
-    font-family: "Playfair Display", serif;
+    font-family: "Space Grotesk", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
     font-size: clamp(28px, 3vw, 36px);
     color: #0d1f14;
     margin-bottom: 10px;
     letter-spacing: -0.2px;
 }
 .cn-form-box p {
-    color: #64748b;
+    color: #000000;
     font-size: 16px;
     margin-bottom: 36px;
 }
@@ -247,7 +252,7 @@
 }
 .cn-form input::placeholder,
 .cn-form textarea::placeholder {
-    color: #94a3b8;
+    color: #000000;
 }
 .cn-form input:focus,
 .cn-form textarea:focus {
@@ -325,7 +330,9 @@
     gap: 24px;
 }
 .cn-map-header__info h2 {
-    font-family: "Playfair Display", serif;
+    font-family: "Space Grotesk", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
     font-size: 32px;
     margin-bottom: 8px;
 }
@@ -371,7 +378,8 @@
 }
 @media (max-width: 640px) {
     .cn-info-cards { grid-template-columns: 1fr; }
-    .cn-form-box { padding: 40px 24px; }
+    .cn-form-box { padding: 32px 20px; }
+    .cn-form input, .cn-form textarea { padding: 14px 16px; }
     .cn-map-header { padding: 40px 32px; flex-direction: column; align-items: flex-start; }
 }
 </style>

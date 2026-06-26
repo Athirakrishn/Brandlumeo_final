@@ -67,7 +67,8 @@
     border-radius: 2px;
 }
 .sv-hero__content h1 {
-    font-family: "Playfair Display", serif;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
     font-size: clamp(38px, 5.5vw, 68px);
     color: #fff;
     line-height: 1.1;
@@ -140,7 +141,9 @@
 }
 .sv-stat:last-child { border-right: none; }
 .sv-stat__number {
-    font-family: "Playfair Display", serif;
+    font-family: "Space Grotesk", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
     font-size: clamp(34px, 4vw, 48px);
     font-weight: 700;
     color: #0f2e18;
@@ -151,7 +154,7 @@
 .sv-stat__number span { color: #16a34a; }
 .sv-stat__label {
     font-size: 13px;
-    color: #64748b;
+    color: #000000;
     font-weight: 500;
     letter-spacing: 0.3px;
 }
@@ -180,7 +183,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #64748b;
+    color: #000000;
     margin: 0;
     flex-shrink: 0;
 }
@@ -198,7 +201,7 @@
     padding: 8px 18px;
     border-radius: 40px;
     background: #f1f5f9;
-    color: #475569;
+    color: #000000;
     font-size: 13px;
     font-weight: 600;
     text-decoration: none;
@@ -255,7 +258,9 @@
     border-radius: 2px;
 }
 .sv-section__title {
-    font-family: "Playfair Display", serif;
+    font-family: "Space Grotesk", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
     font-size: clamp(28px, 3.2vw, 42px);
     line-height: 1.2;
     color: #0d1f14;
@@ -263,7 +268,7 @@
     letter-spacing: -0.3px;
 }
 .sv-section__desc {
-    color: #4b5563;
+    color: #000000;
     font-size: 16px;
     line-height: 1.75;
     margin-bottom: 36px;
@@ -324,7 +329,7 @@
 }
 .sv-service-card__content p {
     font-size: 13.5px;
-    color: #64748b;
+    color: #000000;
     line-height: 1.6;
     margin: 0;
 }
@@ -390,7 +395,9 @@
 }
 .sv-packages__header .sv-section__eyebrow::before { background: #4ade80; }
 .sv-packages__header h2 {
-    font-family: "Playfair Display", serif;
+    font-family: "Space Grotesk", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
     font-size: clamp(30px, 3.5vw, 44px);
     color: #fff;
     letter-spacing: -0.3px;
@@ -443,7 +450,9 @@
     border-radius: 30px;
 }
 .sv-package-card h3 {
-    font-family: "Playfair Display", serif;
+    font-family: "Space Grotesk", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
     font-size: 24px;
     color: #fff;
     margin-bottom: 10px;
@@ -530,7 +539,9 @@
     pointer-events: none;
 }
 .sv-cta h2 {
-    font-family: "Playfair Display", serif;
+    font-family: "Space Grotesk", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
     font-size: clamp(26px, 3.5vw, 40px);
     color: #fff;
     margin-bottom: 14px;
@@ -601,6 +612,8 @@
     .sv-package-grid { grid-template-columns: 1fr; }
     .sv-package-card--featured { grid-column: span 1; }
     .quick-nav-wrap { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .sv-section { padding: 60px 0; }
+    .sv-cta { padding: 40px 24px; }
 }
 </style>
 
@@ -614,9 +627,9 @@
          loading="eager">
     <div class="sv-hero__overlay"></div>
     <div class="sv-hero__content">
-        <p class="sv-hero__tag">What We Do</p>
-        <h1>Smarter strategies.<br><em>Measurable</em><br>results.</h1>
-        <p>We provide full-funnel digital marketing, custom website and mobile app engineering, branding, and creative content creation to help your business scale predictably.</p>
+        <p class="sv-hero__tag">KERALA & UAE'S PREMIER GROWTH AGENCY</p>
+        <h1>We Make Brands<br><em>in Digital Markets</em></h1>
+        <p>Full-funnel digital marketing — SEO, Paid Ads, Social Media & Brand Strategy — built for measurable revenue growth across Kerala and GCC markets.</p>
         <div class="sv-hero__actions">
             <a href="{% url 'contact' %}" class="sv-hero__btn-primary">
                 Book a Free Audit
